@@ -1,0 +1,52 @@
+## How to configure an EtherChannel
+
+#### Steps
+
+1. Load balance
+```
+enable
+configure terminal
+port-channel load-balance src-dst-mac
+```
+
+1. Change Etherchanel Protocol
+```
+enable
+configure terminal
+interface range <interface range>
+channel-protocol <protocol>
+```
+
+2. Create EtherChannel for an interface range. Using LACP or PAgP.
+```
+enable
+configure terminal
+interface range <interface range>
+channel-group 1 mode <mode>
+```
+
+1. Make EtherChannel a trunk port.
+```
+enable
+configure terminal
+interface port-channel 1
+switchport trunk encapsulation dot1q
+switchport mode trunk
+```
+## Useful show commands
+
+```
+show etherchannel load-balance
+```
+
+```
+show etherchannel summary
+```
+
+```
+show etherchannel port-channel
+```
+
+```
+show etherchannel port-channel inside
+```
