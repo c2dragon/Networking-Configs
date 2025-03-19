@@ -1,0 +1,28 @@
+## How to configure Layer 3 EtherChannel
+
+#### Steps
+
+1. Layer 3
+```
+enable
+conf t
+ip routing
+interface range <interface range>
+no switchport
+channel-group <number> mode <mode>
+```
+
+## Useful show commands
+
+```
+show etherchannel load-balance
+```
+
+```
+show etherchannel summary
+```
+
+```
+show etherchannel port-channel
+```
+
