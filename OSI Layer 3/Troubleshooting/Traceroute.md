@@ -1,0 +1,4 @@
+```
+tracert <destination address>
+```
+
